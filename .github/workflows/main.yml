@@ -168,7 +168,7 @@ jobs:
       matrix:
         include:
           - platform: aarch64_generic
-            url_sdk: https://downloads.openwrt.org/releases/22.03.3/targets/rockchip/armv8/openwrt-sdk-22.03.3-rockchip-armv8_gcc-11.2.0_musl.Linux-x86_64.tar.xz
+            url_sdk: https://downloads.openwrt.org/releases/21.02.5/targets/rockchip/armv8/openwrt-sdk-21.02.5-rockchip-armv8_gcc-11.2.0_musl.Linux-x86_64.tar.xz
     steps:
       - name: Initialization ${{ matrix.platform }} compile environment
         run: |
@@ -192,10 +192,10 @@ jobs:
       - name: ${{ matrix.platform }} feeds configuration packages
         run: |
           cd sdk
-          echo "src-git base https://github.com/openwrt/openwrt.git;openwrt-22.03" > feeds.conf
-          echo "src-git-full packages https://github.com/openwrt/packages.git;openwrt-22.03" >> feeds.conf
-          echo "src-git-full luci https://github.com/openwrt/luci.git;openwrt-22.03" >> feeds.conf
-          echo "src-git-full routing https://git.openwrt.org/feed/routing.git;openwrt-22.03"  >> feeds.conf
+          echo "src-git base https://github.com/openwrt/openwrt.git;openwrt-21.02" > feeds.conf
+          echo "src-git-full packages https://github.com/openwrt/packages.git;openwrt-21.02" >> feeds.conf
+          echo "src-git-full luci https://github.com/openwrt/luci.git;openwrt-21.02" >> feeds.conf
+          echo "src-git-full routing https://git.openwrt.org/feed/routing.git;openwrt-21.02"  >> feeds.conf
           echo "src-git passwall_packages https://github.com/miaozilong/openwrt-passwall.git;packages" >> feeds.conf
           echo "src-git passwall_luci https://github.com/miaozilong/openwrt-passwall.git;luci" >> feeds.conf
 
