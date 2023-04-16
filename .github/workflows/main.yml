@@ -142,8 +142,9 @@ jobs:
           echo "make package/luci-app-passwall/{clean,compile} -j$(nproc)"
           make package/luci-app-passwall/{clean,compile} -j$(nproc)
 #          mv bin/packages/x86_64/passwall/ ../
-          rm .config .config.old
+#          rm .config .config.old
           cd ..
+          zip -r openwrt.zip *
           echo "status=success" >> $GITHUB_OUTPUT
           echo "FIRMWARE=$PWD" >> $GITHUB_ENV
 
@@ -154,7 +155,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{needs.job_check.outputs.passwall_version}}
-          files: ${{ env.FIRMWARE }}/passwall/*.ipk
+          files: openwrt.zip
 
 
   job_auto_compile:
