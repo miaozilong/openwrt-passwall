@@ -3,7 +3,7 @@
 # Description: Auto compile
 #
 name: "Auto compile with openwrt sdk"
-on: [push]
+on: [ push ]
 env:
   TZ: Asia/Shanghai
 
@@ -141,7 +141,7 @@ jobs:
           echo "make package/luci-app-passwall/{clean,compile} -j$(nproc)"
           make package/luci-app-passwall/{clean,compile} -j$(nproc)
           cd ..
-          zip -r openwrt.zip *
+          zip -r -y openwrt.zip *
           echo "status=success" >> $GITHUB_OUTPUT
           echo "FIRMWARE=$PWD" >> $GITHUB_ENV
 
