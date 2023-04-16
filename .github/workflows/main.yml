@@ -141,7 +141,7 @@ jobs:
           cd sdk
           echo "make package/luci-app-passwall/{clean,compile} -j$(nproc)"
           make package/luci-app-passwall/{clean,compile} -j$(nproc)
-          mv bin/packages/x86_64/passwall/ ../
+#          mv bin/packages/x86_64/passwall/ ../
           rm .config .config.old
           cd ..
           echo "status=success" >> $GITHUB_OUTPUT
