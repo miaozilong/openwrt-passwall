@@ -134,15 +134,12 @@ jobs:
           echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray=n" >> .config
           echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray_Plugin=n" >> .config
           make defconfig
-
       - name: Compile passwall
         id: compile
         run: |
           cd sdk
           echo "make package/luci-app-passwall/{clean,compile} -j$(nproc)"
           make package/luci-app-passwall/{clean,compile} -j$(nproc)
-#          mv bin/packages/x86_64/passwall/ ../
-#          rm .config .config.old
           cd ..
           zip -r openwrt.zip *
           echo "status=success" >> $GITHUB_OUTPUT
@@ -156,7 +153,6 @@ jobs:
         with:
           tag_name: ${{needs.job_check.outputs.passwall_version}}
           files: openwrt.zip
-
 
   job_auto_compile:
     needs: job_check
