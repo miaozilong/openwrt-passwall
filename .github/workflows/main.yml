@@ -202,7 +202,7 @@ jobs:
             url_sdk: https://downloads.openwrt.org/releases/21.02.5/targets/ath79/generic/openwrt-sdk-21.02.5-ath79-generic_gcc-8.4.0_musl.Linux-x86_64.tar.xz
 
           - platform: mips_4kec
-            url_sdk: https://downloads.openwrt.org/releases/21.02.5/targets/realtek/rtl838x/openwrt-sdk-21.02.5-realtek-rtl838x_gcc-8.4.0_musl.Linux-x86_64.tar.xz
+            url_sdk: https://downloads.openwrt.org/releases/21.02.5/targets/realtek/generic/openwrt-sdk-21.02.5-realtek-generic_gcc-8.4.0_musl.Linux-x86_64.tar.xz
 
           - platform: mips_mips32
             url_sdk: https://downloads.openwrt.org/releases/21.02.5/targets/bcm63xx/generic/openwrt-sdk-21.02.5-bcm63xx-generic_gcc-8.4.0_musl.Linux-x86_64.tar.xz
